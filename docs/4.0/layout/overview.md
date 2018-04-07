@@ -1,17 +1,17 @@
 ---
 layout: docs
-title: Overview
-description: Components and options for laying out your Bootstrap project, including wrapping containers, a powerful grid system, a flexible media object, and responsive utility classes.
+title: 개요
+description: 감싸는 컨테이너, 강력한 그리드 시스템, 유연한 미디어 개체, 반응형 유틸리티 클래스를 포함한 부트스트랩 프로젝트의 레이아웃을 위한 컴포넌트와 옵션.
 group: layout
 redirect_from: "/docs/4.0/layout/"
 toc: true
 ---
 
-## Containers
+## 컨테이너
 
-Containers are the most basic layout element in Bootstrap and are **required when using our default grid system**. Choose from a responsive, fixed-width container (meaning its `max-width` changes at each breakpoint) or fluid-width (meaning it's `100%` wide all the time).
+컨테이너는 부트스트랩에서 가장 기본적인 레이아웃 요소이며 **기본 그리드 시스템을 사용시 필수입니다**. 반응형, 고정폭 컨테이너 (각 중단점에서 `max-width` 변경을 의미), 유동폭 (항상 `100%` 너비라는 의미) 중에서 선택하세요.
 
-While containers *can* be nested, most layouts do not require a nested container.
+컨테이너는 중첩될 수 있지만, 대부분의 레이아웃에는 중첩된 컨테이너가 필요하지 않습니다.
 
 <div class="bd-example">
   <div class="bd-example-container">
@@ -27,7 +27,7 @@ While containers *can* be nested, most layouts do not require a nested container
 </div>
 {% endhighlight %}
 
-Use `.container-fluid` for a full width container, spanning the entire width of the viewport.
+뷰포트 전체 너비에 맞춘 최대폭 컨테이너는 `.container-fluid` 를 사용하세요.
 
 <div class="bd-example">
   <div class="bd-example-container bd-example-container-fluid">
@@ -44,30 +44,30 @@ Use `.container-fluid` for a full width container, spanning the entire width of 
 {% endhighlight %}
 
 
-## Responsive breakpoints
+## 반응형 중단점
 
-Since Bootstrap is developed to be mobile first, we use a handful of [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.
+부트스트랩은 모바일 우선으로 개발된 이후부터, 우리는 레이아웃과 인터페이스를 위해 적합한 중단점을 만들기 위해 약간의 [미디어 쿼리](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) 를 사용합니다. 이 중단점은 대부분 최소 뷰포트 너비를 기반으로 하며 뷰포트 변경시 요소의 크기를 조정할 수 있습니다.
 
-Bootstrap primarily uses the following media query ranges—or breakpoints—in our source Sass files for our layout, grid system, and components.
+부트스트랩은 레이아웃, 그리드 시스템, 컴포넌트에 대해 Sass 소스 파일의 다음과 같은 미디어 쿼리 범위(중단점)를 기본적으로 사용합니다.
 
 {% highlight scss %}
-// Extra small devices (portrait phones, less than 576px)
-// No media query since this is the default in Bootstrap
+// 초소형 장치 (휴대폰 세로방향, 576px 미만)
+// 부트스트랩에서 기본값이므로 미디어 쿼리가 없습니다
 
-// Small devices (landscape phones, 576px and up)
+// 소형 장치 (휴대폰 가로방향, 576px 이상)
 @media (min-width: 576px) { ... }
 
-// Medium devices (tablets, 768px and up)
+// 중형 장치 (태블릿, 768px 이상)
 @media (min-width: 768px) { ... }
 
-// Large devices (desktops, 992px and up)
+// 대형 장치 (데스크탑, 992px 이상)
 @media (min-width: 992px) { ... }
 
-// Extra large devices (large desktops, 1200px and up)
+// 초대형 장치 (대형 데스크탑, 1200px 이상)
 @media (min-width: 1200px) { ... }
 {% endhighlight %}
 
-Since we write our source CSS in Sass, all our media queries are available via Sass mixins:
+Sass 에서 CSS 를 작성하고부터는, 모든 미디어 쿼리는 Sass 믹스인을 통해 사용가능합니다.
 
 {% highlight scss %}
 @include media-breakpoint-up(xs) { ... }
@@ -84,28 +84,28 @@ Since we write our source CSS in Sass, all our media queries are available via S
 }
 {% endhighlight %}
 
-We occasionally use media queries that go in the other direction (the given screen size *or smaller*):
+우리는 가끔 미디어 쿼리를 다른 방향 (주어진 화면 크기 *이하*) 으로 사용하기도 합니다.
 
 {% highlight scss %}
-// Extra small devices (portrait phones, less than 576px)
+// 초소형 장치 (휴대폰 세로방향, 576px 미만)
 @media (max-width: 575.98px) { ... }
 
-// Small devices (landscape phones, less than 768px)
+// 소형 장치 (휴대폰 가로방향, 768px 미만)
 @media (max-width: 767.98px) { ... }
 
-// Medium devices (tablets, less than 992px)
+// 중형 장치 (태블릿, 992px 미만)
 @media (max-width: 991.98px) { ... }
 
-// Large devices (desktops, less than 1200px)
+// 대형 장치 (데스크탑, 1200px 미만)
 @media (max-width: 1199.98px) { ... }
 
-// Extra large devices (large desktops)
-// No media query since the extra-large breakpoint has no upper bound on its width
+// 초대형 장치 (대형 데스크탑)
+// 초대형 장치 중단점에는 너비 상한선이 없으므로 미디어 쿼리는 없습니다
 {% endhighlight %}
 
 {% include callout-info-mediaqueries-breakpoints.md %}
 
-Once again, these media queries are also available via Sass mixins:
+물론, 이 미디어 쿼리도 Sass 믹스인을 통해 사용이 가능합니다.
 
 {% highlight scss %}
 @include media-breakpoint-down(xs) { ... }
@@ -114,26 +114,26 @@ Once again, these media queries are also available via Sass mixins:
 @include media-breakpoint-down(lg) { ... }
 {% endhighlight %}
 
-There are also media queries and mixins for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths.
+또한 최소 및 최대 중단점 너비를 이용하여 특정 화면 크기를 대상으로 하는 미디어 쿼리 및 믹스인도 있습니다.
 
 {% highlight scss %}
-// Extra small devices (portrait phones, less than 576px)
+// 초소형 장치 (휴대폰 세로방향, 576px 미만)
 @media (max-width: 575.98px) { ... }
 
-// Small devices (landscape phones, 576px and up)
+// 소형 장치 (휴대폰 가로방향, 576px 이상)
 @media (min-width: 576px) and (max-width: 767.98px) { ... }
 
-// Medium devices (tablets, 768px and up)
+// 중형 장치 (태블릿, 768px 이상)
 @media (min-width: 768px) and (max-width: 991.98px) { ... }
 
-// Large devices (desktops, 992px and up)
+// 대형 장치 (데스크탑, 992px 이상)
 @media (min-width: 992px) and (max-width: 1199.98px) { ... }
 
-// Extra large devices (large desktops, 1200px and up)
+// 초대형 장치 (대형 데스크탑, 1200px 이상)
 @media (min-width: 1200px) { ... }
 {% endhighlight %}
 
-These media queries are also available via Sass mixins:
+또한 이 미디어 쿼리도 Sass 믹스인을 통해 사용이 가능합니다.
 
 {% highlight scss %}
 @include media-breakpoint-only(xs) { ... }
@@ -143,15 +143,15 @@ These media queries are also available via Sass mixins:
 @include media-breakpoint-only(xl) { ... }
 {% endhighlight %}
 
-Similarly, media queries may span multiple breakpoint widths:
+마찬가지로, 미디어 쿼리는 여러 중단점 너비에 걸쳐 있을 수도 있습니다.
 
 {% highlight scss %}
-// Example
-// Apply styles starting from medium devices and up to extra large devices
+// 예제
+// 중형 장치부터 대형 장치까지 적용합니다.
 @media (min-width: 768px) and (max-width: 1199.98px) { ... }
 {% endhighlight %}
 
-The Sass mixin for targeting the same screen size range would be:
+동일한 화면 크기 범위를 대상으로 하는 Sass 믹스인은 다음과 같습니다.
 
 {% highlight scss %}
 @include media-breakpoint-between(md, xl) { ... }
@@ -159,11 +159,11 @@ The Sass mixin for targeting the same screen size range would be:
 
 ## Z-index
 
-Several Bootstrap components utilize `z-index`, the CSS property that helps control layout by providing a third axis to arrange content. We utilize a default z-index scale in Bootstrap that's been designed to properly layer navigation, tooltips and popovers, modals, and more.
+몇몇 부트스트랩 컴포넌트는 콘텐츠을 정렬하기 위한 세번째 축을 제공하여 레이아웃을 제어하는데 도움을 주는 CSS 속성인 `z-index` 를 사용합니다. 네비게이션, 툴팁, 팝오버, 모달 등을 적절하게 놓기 위해 설계된 부트스트랩의 기본 z-index 등급을 사용합니다. 
 
-These higher values start at an arbitrary number, high and specific enough to ideally avoid conflicts. We need a standard set of these across our layered components—tooltips, popovers, navbars, dropdowns, modals—so we can be reasonably consistent in the behaviors. There's no reason we couldn't have used `100`+ or `500`+.
+이러한 높은 값은 충돌을 이론적으로 피하기 충분한 임의의 수부터 시작하여 높게 지정됩니다. 우리는 동작에서 합리적으로 일관될 수 있도록 계층적 컴포넌트(툴팁, 팝오버, navbar, 드롭다운, 모달) 전반에 걸쳐 표준 세트가 필요합니다. 우리가 `100` 단위 또는 `500` 단위를 사용할 수 없었던 이유는 딱히 없습니다.
 
-We don't encourage customization of these individual values; should you change one, you likely need to change them all.
+우리는 이러한 개별 값들을 맞춤화하는 것을 장려하지 않습니다. 만약 하나를 변경해야한다면, 모두를 바꿔야 할 것입니다.
 
 {% highlight scss %}
 $zindex-dropdown:          1000 !default;
@@ -175,4 +175,4 @@ $zindex-popover:           1060 !default;
 $zindex-tooltip:           1070 !default;
 {% endhighlight %}
 
-To handle overlapping borders within components (e.g., buttons and inputs in input groups), we use low single digit `z-index` values of `1`, `2`, and `3` for default, hover, and active states. On hover/focus/active, we bring a particular element to the forefront with a higher `z-index` value to show their border over the sibling elements.
+컴포넌트 (예: 입력그룹의 버튼과 입력) 에서 테두리가 겹치는 것을 처리하기 위해, 기본, 호버, 활성 상태에 대해 `1`, `2`, `3` 의 값을 `z-index` 값으로 사용합니다. 호버/포커스/활성 상태에서, 형제 요소 위에 테두리를 표시하기 위해 더 높은 `z-index` 값을 사용하여 특정 요소를 젤 앞으로 가져옵니다. 

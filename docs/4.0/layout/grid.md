@@ -1,29 +1,29 @@
 ---
 layout: docs
-title: Grid system
-description: Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, five default responsive tiers, Sass variables and mixins, and dozens of predefined classes.
+title: 그리드 시스템
+description: 12 개의 컬럼 시스템, 5 가지 반응형 계층, Sass 변수 및 믹스인, 미리 정의된 많은 클래스들의 도움을 받아 다양한 형태와 크기의 레이아웃을 만들기 위해 강력한 모바일 우선 flexbox 그리드를 사용하세요.
 group: layout
 toc: true
 ---
 
-## How it works
+## 작동 원리
 
-Bootstrap's grid system uses a series of containers, rows, and columns to layout and align content. It's built with [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes) and is fully responsive. Below is an example and an in-depth look at how the grid comes together.
+부트스트랩의 그리드 시스템은 레이아웃을 만들고 콘텐츠를 정렬하는데 일련의 컨테이너, 행, 열을 사용합니다. 그것은 [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes) 로 만들어졌으며 완전히 반응형입니다. 다음은 어떻게 그리드가 함께 나타나는지에 대한 예제와 심층적인 모습입니다. 
 
-**New to or unfamiliar with flexbox?** [Read this CSS Tricks flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background) for background, terminology, guidelines, and code snippets.
+**flexbox 가 처음이거나 익숙하지 않으신가요?** 배경, 용어, 지침, 코드 조각 등을 위해 [CSS 트릭 웹사이트에서 flexbox 가이드를 읽어보세요](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background)
 
 <div class="bd-example-row">
 {% capture example %}
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      One of three columns
+      3열중 하나
     </div>
     <div class="col-sm">
-      One of three columns
+      3열중 하나
     </div>
     <div class="col-sm">
-      One of three columns
+      3열중 하나
     </div>
   </div>
 </div>
@@ -31,66 +31,66 @@ Bootstrap's grid system uses a series of containers, rows, and columns to layout
 {% include example.html content=example %}
 </div>
 
-The above example creates three equal-width columns on small, medium, large, and extra large devices using our predefined grid classes. Those columns are centered in the page with the parent `.container`.
+위 예는 소형, 중형, 대형, 초대형 장치에서 미리 정의된 그리드 클래스를 사용하여 3 개의 같은 너비의 열을 생성합니다. 이 열들은 부모인 `.container` 와 함께 페이지 중앙에 배치됩니다.
 
-Breaking it down, here's how it works:
+세분화하면 다음과 같이 작동합니다.
 
-- Containers provide a means to center and horizontally pad your site's contents. Use `.container` for a responsive pixel width or `.container-fluid` for `width: 100%` across all viewport and device sizes.
-- Rows are wrappers for columns. Each column has horizontal `padding` (called a gutter) for controlling the space between them. This `padding` is then counteracted on the rows with negative margins. This way, all the content in your columns is visually aligned down the left side.
-- In a grid layout, content must be placed within columns and only columns may be immediate children of rows.
-- Thanks to flexbox, grid columns without a specified `width` will automatically layout as equal width columns. For example, four instances of `.col-sm` will each automatically be 25% wide from the small breakpoint and up. See the [auto-layout columns](#auto-layout-columns) section for more examples.
-- Column classes indicate the number of columns you'd like to use out of the possible 12 per row. So, if you want three equal-width columns across, you can use `.col-4`.
-- Column `width`s are set in percentages, so they're always fluid and sized relative to their parent element.
-- Columns have horizontal `padding` to create the gutters between individual columns, however, you can remove the `margin` from rows and `padding` from columns with `.no-gutters` on the `.row`.
-- To make the grid responsive, there are five grid breakpoints, one for each [responsive breakpoint]({{ site.baseurl }}/docs/{{ site.docs_version }}/layout/overview/#responsive-breakpoints): all breakpoints (extra small), small, medium, large, and extra large.
-- Grid breakpoints are based on minimum width media queries, meaning **they apply to that one breakpoint and all those above it** (e.g., `.col-sm-4` applies to small, medium, large, and extra large devices, but not the first `xs` breakpoint).
-- You can use predefined grid classes (like `.col-4`) or [Sass mixins](#sass-mixins) for more semantic markup.
+- 컨테이너는 사이트의 콘텐츠를 중앙에 위치하게 하고 좌우로 패딩을 넣어주는 수단을 제공합니다. 반응형 픽셀 단위 너비를 위해서는 `.container` 를 사용하고, 모든 뷰포트와 장치 크기에 대해 `width: 100%` 를 위해서는 `.container-fluid` 를 사용하세요.
+- 행은 열을 감쌉니다. 각 열은 그들 사이의 공간을 제어하기 위해 좌우로 `padding` (gutter 라고 불림) 이 있습니다. 이 `padding` 은 음수 마진을 가진 행과 대응됩니다. 이렇게 하면, 열의 모든 콘텐츠는 시각적으로 왼쪽으로 정렬됩니다.  
+- 그리드 레이아웃에서, 콘텐츠는 열 내에 있어야 하고 열만이 행 바로 아래의 자식이 될 수 있습니다.
+- flexbox 덕분에, `width` 를 지정하지 않은 그리드 열은 자동으로 같은 너비 열로 배치됩니다. 예를 들어, `.col-sm` 인스턴스 4개는 자동으로 소형 중단점 이상에서 25% 너비가 됩니다. 자세한 예제는 [auto-layout columns](#auto-layout-columns) 을 참조하세요.
+- 열 클래스는 하나의 행마다 12 열중 사용하고 싶은 열의 수를 나타냅니다. 따라서, 만약 3 개의 동일한 너비의 열이 필요하다면 `.col-4` 를 사용할 수 있습니다.
+- 열의 `width` 는 백분율로 설정되므로, 항상 부모 요소에 상대적으로 크기가 변경되고 유동적입니다. 
+- 열들은 열사이에 홈을 만들기 위해 수평의 `padding` 을 가지고 있습니다만, 행의 `margin` 과 열의 `padding` 은 `.row` 에 `.no-gutters` 를 넣어 제거할 수 있습니다. 
+- 그리드를 반응형을 만들기 위해 각 [반응형 중단점]({{ site.baseurl }}/docs/{{ site.docs_version }}/layout/overview/#반응형-중단점) 마다 하나씩 5가지 중단점이 있습니다. 중단점은 (초소형), 소형, 중형, 대형, 초대형 등이 있습니다.
+- 그리드 중단점은 최소 너비 미디어 쿼리를 기반으로 합니다. 즉, **하나의 중단점과 그 이상에는 모두 적용됩니다** (예: `.col-sm-4` 은 소형, 중형, 대형, 초대형에 적용됩니다만, `xs` 중단점에는 적용되지 않습니다). 
+- 더 시맨틱한 마크업을 위해 미리 정의된 (`.col-4` 과 같은) 그리드 클래스나 [Sass 믹스인](#sass-믹스인) 을 사용할 수 있습니다. 
 
-Be aware of the limitations and [bugs around flexbox](https://github.com/philipwalton/flexbugs), like the [inability to use some HTML elements as flex containers](https://github.com/philipwalton/flexbugs#9-some-html-elements-cant-be-flex-containers).
+[일부 HTML 요소는 flex 컨테이너로 사용할 수 없음](https://github.com/philipwalton/flexbugs#9-some-html-elements-cant-be-flex-containers) 과 같은 [flexbox 관련 버그](https://github.com/philipwalton/flexbugs) 와 한계를 알아두세요. 
 
-## Grid options
+## 그리드 옵션
 
-While Bootstrap uses `em`s or `rem`s for defining most sizes, `px`s are used for grid breakpoints and container widths. This is because the viewport width is in pixels and does not change with the [font size](https://drafts.csswg.org/mediaqueries-3/#units).
+부트스트랩은 대부분의 크기를 정의하기 위해 `em` 또는 `rem` 을 사용하지만, 그리드 중단점과 컨테이너 너비를 위해 `px` 를 사용합니다. 이것은 뷰포트 너비가 픽셀 단위이며 [글꼴 크기](https://drafts.csswg.org/mediaqueries-3/#units) 기반으로 변경되지 않기 때문입니다.
 
-See how aspects of the Bootstrap grid system work across multiple devices with a handy table.
+간단한 표를 통해서 다양한 장치에서 부트스트랩 그리드 시스템이 어떻게 작동하는지 살펴보세요.
 
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th></th>
       <th class="text-center">
-        Extra small<br>
+        초소형<br>
         <small>&lt;576px</small>
       </th>
       <th class="text-center">
-        Small<br>
+        소형<br>
         <small>&ge;576px</small>
       </th>
       <th class="text-center">
-        Medium<br>
+        중형<br>
         <small>&ge;768px</small>
       </th>
       <th class="text-center">
-        Large<br>
+        대형<br>
         <small>&ge;992px</small>
       </th>
       <th class="text-center">
-        Extra large<br>
+        초대형<br>
         <small>&ge;1200px</small>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th class="text-nowrap" scope="row">Max container width</th>
-      <td>None (auto)</td>
+      <th class="text-nowrap" scope="row">최대 컨테이너 너비</th>
+      <td>없음 (자동)</td>
       <td>540px</td>
       <td>720px</td>
       <td>960px</td>
       <td>1140px</td>
     </tr>
     <tr>
-      <th class="text-nowrap" scope="row">Class prefix</th>
+      <th class="text-nowrap" scope="row">클래스 접두사</th>
       <td><code>.col-</code></td>
       <td><code>.col-sm-</code></td>
       <td><code>.col-md-</code></td>
@@ -98,52 +98,52 @@ See how aspects of the Bootstrap grid system work across multiple devices with a
       <td><code>.col-xl-</code></td>
     </tr>
     <tr>
-      <th class="text-nowrap" scope="row"># of columns</th>
+      <th class="text-nowrap" scope="row">열 수</th>
       <td colspan="5">12</td>
     </tr>
     <tr>
-      <th class="text-nowrap" scope="row">Gutter width</th>
-      <td colspan="5">30px (15px on each side of a column)</td>
+      <th class="text-nowrap" scope="row">홈 너비</th>
+      <td colspan="5">30px (열의 각 옆면에 15px)</td>
     </tr>
     <tr>
-      <th class="text-nowrap" scope="row">Nestable</th>
-      <td colspan="5">Yes</td>
+      <th class="text-nowrap" scope="row">중첩가능</th>
+      <td colspan="5">예</td>
     </tr>
     <tr>
-      <th class="text-nowrap" scope="row">Column ordering</th>
-      <td colspan="5">Yes</td>
+      <th class="text-nowrap" scope="row">열 순서정하기</th>
+      <td colspan="5">예</td>
     </tr>
   </tbody>
 </table>
 
-## Auto-layout columns
+## 자동 레이아웃 열
 
-Utilize breakpoint-specific column classes for easy column sizing without an explicit numbered class like `.col-sm-6`.
+`.col-sm-6` 과 같이 명확히 숫자로된 클래스 없이 쉽게 열의 크기를 지정하기 위해서 중단점-명시 열 클래스를 이용하세요.
 
-### Equal-width
+### 같은 너비
 
-For example, here are two grid layouts that apply to every device and viewport, from `xs` to `xl`. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.
+예를 들면, 다음은 `xs` 부터 `xl` 까지 모든 장치와 뷰포트에서 적용되는 2 가지 그리드 레이아웃입니다. 필요한 각 중단점에 단위없이 클래스를 추가하면 모든 열은 동일한 너비를 가지게 됩니다. 
 
 <div class="bd-example-row">
 {% capture example %}
 <div class="container">
   <div class="row">
     <div class="col">
-      1 of 2
+      2 개중 1 번쨰
     </div>
     <div class="col">
-      2 of 2
+      2 개중 2 번째
     </div>
   </div>
   <div class="row">
     <div class="col">
-      1 of 3
+      3 개중 1 번째
     </div>
     <div class="col">
-      2 of 3
+      3 개중 2 번째
     </div>
     <div class="col">
-      3 of 3
+      3 개중 3 번째
     </div>
   </div>
 </div>
@@ -151,50 +151,50 @@ For example, here are two grid layouts that apply to every device and viewport, 
 {% include example.html content=example %}
 </div>
 
-Equal-width columns can be broken into multiple lines, but there was a [Safari flexbox bug](https://github.com/philipwalton/flexbugs#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items) that prevented this from working without an explicit `flex-basis` or `border`. There are workarounds for older browser versions, but they shouldn't be necessary if you're up-to-date.
+같은 너비의 열은 여러 줄로 나눠질 수 있습니다만, 명시적인 `flex-basis` 나 `border` 없이 동작하는 것을 막는 [사파리 flexbox 버그](https://github.com/philipwalton/flexbugs#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items) 가 있습니다. 오래된 브라우저 버전들을 위한 해결책이 있으나, 최신버전이라면 필요하지 않습니다. 
 
 <div class="bd-example-row">
 {% capture example %}
 <div class="container">
   <div class="row">
-    <div class="col">Column</div>
-    <div class="col">Column</div>
+    <div class="col">열</div>
+    <div class="col">열</div>
     <div class="w-100"></div>
-    <div class="col">Column</div>
-    <div class="col">Column</div>
+    <div class="col">열</div>
+    <div class="col">열</div>
   </div>
 </div>
 {% endcapture %}
 {% include example.html content=example %}
 </div>
 
-### Setting one column width
+### 특정 열 너비 설정하기
 
-Auto-layout for flexbox grid columns also means you can set the width of one column and have the sibling columns automatically resize around it. You may use predefined grid classes (as shown below), grid mixins, or inline widths. Note that the other columns will resize no matter the width of the center column.
+flexbox 를 위한 자동 레이아웃은 특정한 하나의 열 너비를 설정하면 형제 열들은 자동으로 그것에 맞춰 크기가 변경됩니다. 미리 정의된 그리드 클래스 (아래 참조), 그리드 믹스인, 인라인 너비 등을 사용할 수 있습니다. 다른 열의 크기가 변경되는데 가운데 열의 너비는 중요하지 않습니다. 
 
 <div class="bd-example-row">
 {% capture example %}
 <div class="container">
   <div class="row">
     <div class="col">
-      1 of 3
+      3 개중 1 번째
     </div>
     <div class="col-6">
-      2 of 3 (wider)
+      3 개중 2 번째 (넓음)
     </div>
     <div class="col">
-      3 of 3
+      3 개중 3번째
     </div>
   </div>
   <div class="row">
     <div class="col">
-      1 of 3
+      3 개중 1 번째
     </div>
     <div class="col-5">
-      2 of 3 (wider)
+      3 개중 2 번째 (넓음)
     </div>
     <div class="col">
-      3 of 3
+      3 개중 3 번째
     </div>
   </div>
 </div>
@@ -202,33 +202,33 @@ Auto-layout for flexbox grid columns also means you can set the width of one col
 {% include example.html content=example %}
 </div>
 
-### Variable width content
+### 가변폭 콘텐츠
 
-Use `col-{breakpoint}-auto` classes to size columns based on the natural width of their content.
+콘텐츠의 너비에 따라 열의 크기를 조정하기 위해 `col-{breakpoint}-auto` 클래스를 사용하세요.
 
 <div class="bd-example-row">
 {% capture example %}
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col col-lg-2">
-      1 of 3
+      3 개중 1 번째
     </div>
     <div class="col-md-auto">
-      Variable width content
+      가변폭 콘텐츠
     </div>
     <div class="col col-lg-2">
-      3 of 3
+      3 개중 3 번째
     </div>
   </div>
   <div class="row">
     <div class="col">
-      1 of 3
+      3 개중 1 번째
     </div>
     <div class="col-md-auto">
-      Variable width content
+      가변폭 콘텐츠
     </div>
     <div class="col col-lg-2">
-      3 of 3
+      3 개중 3 번째
     </div>
   </div>
 </div>
@@ -236,9 +236,9 @@ Use `col-{breakpoint}-auto` classes to size columns based on the natural width o
 {% include example.html content=example %}
 </div>
 
-### Equal-width multi-row
+### 여러 행에서 같은 너비
 
-Create equal-width columns that span multiple rows by inserting a `.w-100` where you want the columns to break to a new line. Make the breaks responsive by mixing the `.w-100` with some [responsive display utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/display/).
+줄바꿈하고 싶은 위치에 `.w-100` 를 넣어 여러 줄에 걸친 같은 너비의 열을 만들어 보세요. 일부 [반응형 디스플레이 유틸리티]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/display/) 와 `.w-100` 을 혼합하여 줄바꿈을 반응형으로 만들어보세요.
 
 <div class="bd-example-row">
 {% capture example %}
@@ -253,13 +253,13 @@ Create equal-width columns that span multiple rows by inserting a `.w-100` where
 {% include example.html content=example %}
 </div>
 
-## Responsive classes
+## 반응형 클래스
 
-Bootstrap's grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.
+부트스트랩의 그리드는 복잡한 반응형 레이아웃을 작성하기 위한 미리 정의된 클래스들 5 계층이 있습니다. 당신이 생각하는 대로 초소형, 소형, 중형, 대형, 초대형 장치 상의 열의 크기를 맞춤화할 수 있습니다.
 
-### All breakpoints
+### 모든 중단점
 
-For grids that are the same from the smallest of devices to the largest, use the `.col` and `.col-*` classes. Specify a numbered class when you need a particularly sized column; otherwise, feel free to stick to `.col`.
+초소형 장치부터 초대형 장치까지 같은 그리드를 위해, `.col` 와 `.col-*` 을 사용하세요. 특별히 크기가 정해진 열이 필요할 때 숫자가 매겨진 클래스를 지정하시고, 보통 그냥 `.col` 을 사용하시면 됩니다. 
 
 <div class="bd-example-row">
 {% capture example %}
@@ -277,9 +277,9 @@ For grids that are the same from the smallest of devices to the largest, use the
 {% include example.html content=example %}
 </div>
 
-### Stacked to horizontal
+### 수직에서 수평으로
 
-Using a single set of `.col-sm-*` classes, you can create a basic grid system that starts out stacked and becomes horizontal at the small breakpoint (`sm`).
+`.col-sm-*` 클래스를 사용하면, 수직으로 쌓이는 것에서 시작해서 소형 중단점 (`sm`) 부터 수평으로 되는 기본 그리드 시스템을 만들수 있습니다.
 
 <div class="bd-example-row">
 {% capture example %}
@@ -296,26 +296,26 @@ Using a single set of `.col-sm-*` classes, you can create a basic grid system th
 {% include example.html content=example %}
 </div>
 
-### Mix and match
+### 조합
 
-Don't want your columns to simply stack in some grid tiers? Use a combination of different classes for each tier as needed. See the example below for a better idea of how it all works.
+일부 그리드 계층에서 열이 단순하게 쌓이는 것을 원하지 않습니까? 필요한 계층을 위해 다른 클래스의 조합을 사용해보세요. 어떻게 작동하는지 아이디어를 확인하려면 아래의 예제를 보세요.
 
 <div class="bd-example-row">
 {% capture example %}
-<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<!-- 하나는 최대 너비, 다른 하나는 절반 너비를 지정하여 모바일에서 열이 수직으로 쌓이도록 한다 -->
 <div class="row">
   <div class="col-12 col-md-8">.col-12 .col-md-8</div>
   <div class="col-6 col-md-4">.col-6 .col-md-4</div>
 </div>
 
-<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+<!-- 열은 모바일에서는 50% 너비로 시작해서 데스크탑에서는 33.3% 가 됩니다 -->
 <div class="row">
   <div class="col-6 col-md-4">.col-6 .col-md-4</div>
   <div class="col-6 col-md-4">.col-6 .col-md-4</div>
   <div class="col-6 col-md-4">.col-6 .col-md-4</div>
 </div>
 
-<!-- Columns are always 50% wide, on mobile and desktop -->
+<!-- 열은 모바일과 데스크탑에서 항상 50% 너비를 가집니다 -->
 <div class="row">
   <div class="col-6">.col-6</div>
   <div class="col-6">.col-6</div>
@@ -324,46 +324,46 @@ Don't want your columns to simply stack in some grid tiers? Use a combination of
 {% include example.html content=example %}
 </div>
 
-## Alignment
+## 정렬
 
-Use flexbox alignment utilities to vertically and horizontally align columns.
+열을 수직 및 수평 정렬하기 위해 flexbox 정렬 유틸리티를 사용하세요.
 
-### Vertical alignment
+### 수직 정렬
 
 <div class="bd-example-row bd-example-row-flex-cols">
 {% capture example %}
 <div class="container">
   <div class="row align-items-start">
     <div class="col">
-      One of three columns
+      세 열중 하나
     </div>
     <div class="col">
-      One of three columns
+      세 열중 하나
     </div>
     <div class="col">
-      One of three columns
+      세 열중 하나
     </div>
   </div>
   <div class="row align-items-center">
     <div class="col">
-      One of three columns
+      세 열중 하나
     </div>
     <div class="col">
-      One of three columns
+      세 열중 하나
     </div>
     <div class="col">
-      One of three columns
+      세 열중 하나
     </div>
   </div>
   <div class="row align-items-end">
     <div class="col">
-      One of three columns
+      세 열중 하나
     </div>
     <div class="col">
-      One of three columns
+      세 열중 하나
     </div>
     <div class="col">
-      One of three columns
+      세 열중 하나
     </div>
   </div>
 </div>
@@ -376,13 +376,13 @@ Use flexbox alignment utilities to vertically and horizontally align columns.
 <div class="container">
   <div class="row">
     <div class="col align-self-start">
-      One of three columns
+      세 열중 하나
     </div>
     <div class="col align-self-center">
-      One of three columns
+      세 열중 하나
     </div>
     <div class="col align-self-end">
-      One of three columns
+      세 열중 하나
     </div>
   </div>
 </div>
@@ -390,49 +390,49 @@ Use flexbox alignment utilities to vertically and horizontally align columns.
 {% include example.html content=example %}
 </div>
 
-### Horizontal alignment
+### 수평 정렬
 
 <div class="bd-example-row">
 {% capture example %}
 <div class="container">
   <div class="row justify-content-start">
     <div class="col-4">
-      One of two columns
+      두 열중 하나
     </div>
     <div class="col-4">
-      One of two columns
+      두 열중 하나
     </div>
   </div>
   <div class="row justify-content-center">
     <div class="col-4">
-      One of two columns
+      두 열중 하나
     </div>
     <div class="col-4">
-      One of two columns
+      두 열중 하나
     </div>
   </div>
   <div class="row justify-content-end">
     <div class="col-4">
-      One of two columns
+      두 열중 하나
     </div>
     <div class="col-4">
-      One of two columns
+      두 열중 하나
     </div>
   </div>
   <div class="row justify-content-around">
     <div class="col-4">
-      One of two columns
+      두 열중 하나
     </div>
     <div class="col-4">
-      One of two columns
+      두 열중 하나
     </div>
   </div>
   <div class="row justify-content-between">
     <div class="col-4">
-      One of two columns
+      두 열중 하나
     </div>
     <div class="col-4">
-      One of two columns
+      두 열중 하나
     </div>
   </div>
 </div>
@@ -442,11 +442,13 @@ Use flexbox alignment utilities to vertically and horizontally align columns.
 
 ### No gutters
 
-The gutters between columns in our predefined grid classes can be removed with `.no-gutters`. This removes the negative `margin`s from `.row` and the horizontal `padding` from all immediate children columns.
+미리 정의된 그리드 클래스 내의 열 사이에 홈은 `.no-gutters` 로 제거 될 수 있습니다. 이것은 `.row` 의 음수 `margin` 들과 모든 직계 하위 열들의 수평 `padding` 을 제거합니다.
 
-Here's the source code for creating these styles. Note that column overrides are scoped to only the first children columns and are targeted via [attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors). While this generates a more specific selector, column padding can still be further customized with [spacing utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/).
+다음은 이러한 스타일을 만드는 데 필요한 소스 코드입니다.
+열 오버라이드는 첫번째 하위 열들에게만 적용되고 [속성 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) 을 통해 대상으로 지정됩니다.
+더 구체적인 선택자를 작성한다면, 열 패딩은 [spacing 유틸리티]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/) 를 이용하여 추가적으로 맞춤화할 수 있습니다.
 
-**Need an edge-to-edge design?** Drop the parent `.container` or `.container-fluid`.
+**Edge-to-edge 디자인이 필요하세요?** 부모 `.container` 나 `.container-fluid` 를 제거하세요.
 
 {% highlight sass %}
 .no-gutters {
@@ -461,7 +463,7 @@ Here's the source code for creating these styles. Note that column overrides are
 }
 {% endhighlight %}
 
-In practice, here's how it looks. Note you can continue to use this with all other predefined grid classes (including column widths, responsive tiers, reorders, and more).
+실제로 그것은 다음과 같이 보입니다. 미리 정의된 다른 그리드 클래스 (열 너비, 반응형 계층, 순서지정 등) 와 함께 계속 사용할 수 있습니다.
 
 <div class="bd-example-row">
 {% capture example %}
@@ -473,24 +475,24 @@ In practice, here's how it looks. Note you can continue to use this with all oth
 {% include example.html content=example %}
 </div>
 
-### Column wrapping
+### 열 감싸기
 
-If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.
+하나의 행에 12 개 이상의 열이 있으면 하나의 단위를 기준으로 초과된 열을 가진 그룹은 새로운 행으로 감싸집니다.
 
 <div class="bd-example-row">
 {% capture example %}
 <div class="row">
   <div class="col-9">.col-9</div>
-  <div class="col-4">.col-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
-  <div class="col-6">.col-6<br>Subsequent columns continue along the new line.</div>
+  <div class="col-4">.col-4<br>9 + 4 = 13 &gt; 12 이므로, 이 4 열 너비 div 는 인접된 단위로서 새로운 행으로 감싸집니다.</div>
+  <div class="col-6">.col-6<br>후속 열은 새 행에 계속 이어집니다.</div>
 </div>
 {% endcapture %}
 {% include example.html content=example %}
 </div>
 
-### Column breaks
+### 열 줄바꿈
 
-Breaking columns to a new line in flexbox requires a small hack: add an element with `width: 100%` wherever you want to wrap your columns to a new line. Normally this is accomplished with multiple `.row`s, but not every implementation method can account for this.
+flexbox 에서 새 행으로 열을 줄바꿈 하는 것은 약간의 꼼수가 필요합니다. 새 행으로 감싸고 싶은 열이 있다면 `width: 100%` 를 추가하세요. 보통 이것을 여러 개의 `.row` 로 해결하지만, 모든 구현을 그렇게 해결한다고는 할 수 없습니다.
 
 <div class="bd-example-row">
 {% capture example %}
@@ -498,7 +500,7 @@ Breaking columns to a new line in flexbox requires a small hack: add an element 
   <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
   <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
 
-  <!-- Force next columns to break to new line -->
+  <!-- 다음 열을 강제로 새 행으로 줄바꿈합니다 -->
   <div class="w-100"></div>
 
   <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
@@ -508,7 +510,7 @@ Breaking columns to a new line in flexbox requires a small hack: add an element 
 {% include example.html content=example %}
 </div>
 
-You may also apply this break at specific breakpoints with our [responsive display utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/display/).
+우리의 [반응형 디스플레이 유틸리티]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/display/) 를 사용해서 특정한 중단점에 이 줄바꿈을 적용할 수도 있습니다.
 
 <div class="bd-example-row">
 {% capture example %}
@@ -516,7 +518,7 @@ You may also apply this break at specific breakpoints with our [responsive displ
   <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
   <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
 
-  <!-- Force next columns to break to new line at md breakpoint and up -->
+  <!-- 중형 중단점 이상에서 다음 열을 새로운 행으로 강제로 줄바꿈합니다 -->
   <div class="w-100 d-none d-md-block"></div>
 
   <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
@@ -526,24 +528,24 @@ You may also apply this break at specific breakpoints with our [responsive displ
 {% include example.html content=example %}
 </div>
 
-## Reordering
+## 순서지정
 
-### Order classes
+### 순서 클래스
 
-Use `.order-` classes for controlling the **visual order** of your content. These classes are responsive, so you can set the `order` by breakpoint (e.g., `.order-1.order-md-2`). Includes support for `1` through `12` across all five grid tiers.
+콘텐츠의 **시각적인 순서** 제어하기 위해서 `.order-` 클래스를 사용하세요. 이 클래스는 반응형이어서 중단점 (예: `.order-1.order-md-2`) 별로 `order` 를 설정할 수 있습니다. 순서지정은 5 그리드 계층에 대해 `1` 부터 `12` 까지 지원합니다. 
 
 <div class="bd-example-row">
 {% capture example %}
 <div class="container">
   <div class="row">
     <div class="col">
-      First, but unordered
+      첫번째이지만 순서는 지정되지 않음
     </div>
     <div class="col order-12">
-      Second, but last
+      두번째이지만 순서는 마지막으로
     </div>
     <div class="col order-1">
-      Third, but first
+      세번째이지만 순서는 첫번째로
     </div>
   </div>
 </div>
@@ -551,20 +553,20 @@ Use `.order-` classes for controlling the **visual order** of your content. Thes
 {% include example.html content=example %}
 </div>
 
-There are also responsive `.order-first` and `.order-last` classes that change the `order` of an element by applying `order: -1` and `order: 13` (`order: $columns + 1`), respectively. These classes can also be intermixed with the numbered `.order-*` classes as needed.
+`order: -1` 와 `order: 13` (`order: $columns + 1`) 을 적용하여 요소의 `order` 를 변경시키는 `.order-first` 와 `.order-last` 클래스도 있습니다. 이 클래스들은 필요한 경우 `.order-*` 와 섞일 수도 있습니다.
 
 <div class="bd-example-row">
 {% capture example %}
 <div class="container">
   <div class="row">
     <div class="col order-last">
-      First, but last
+      첫번째이지만 순서는 마지막으로
     </div>
     <div class="col">
-      Second, but unordered
+      두번째이지만 순서는 지정되지 않음
     </div>
     <div class="col order-first">
-      Third, but first
+      세번째이지만 순서는 첫번째로
     </div>
   </div>
 </div>
@@ -572,13 +574,13 @@ There are also responsive `.order-first` and `.order-last` classes that change t
 {% include example.html content=example %}
 </div>
 
-### Offsetting columns
+### 열 오프셋
 
-You can offset grid columns in two ways: our responsive `.offset-` grid classes and our [margin utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/). Grid classes are sized to match columns while margins are more useful for quick layouts where the width of the offset is variable.
+반응형 `.offset-` 그리드 클래스와 [여백 유틸리티]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/) 등 2가지 방법으로 그리드 컬럼간의 오프셋을 지정할 수 있습니다. 그리드 클래스는 열에 맞추어 크기가 조정되는 반면에 margin 은 오프셋의 너비가 다양한 레이아웃에 더 유용합니다.
 
-#### Offset classes
+#### 오프셋 클래스
 
-Move columns to the right using `.offset-md-*` classes. These classes increase the left margin of a column by `*` columns. For example, `.offset-md-4` moves `.col-md-4` over four columns.
+`.offset-md-*` 클래스를 사용하여 열을 오른쪽으로 옮기세요. 이 클래스들은 컬럼의 왼쪽 여백을 `*` 열만큼 늘립니다. 예를 들어, `.offset-md-4` 은 `.col-md-4` 을 4 열만큼 옮깁니다. 
 
 <div class="bd-example-row">
 {% capture example %}
@@ -597,7 +599,7 @@ Move columns to the right using `.offset-md-*` classes. These classes increase t
 {% include example.html content=example %}
 </div>
 
-In addition to column clearing at responsive breakpoints, you may need to reset offsets. See this in action in [the grid example]({{ site.baseurl }}/docs/{{ site.docs_version }}/examples/grid/).
+추가로 반응형 중단점에서 오프셋을 재설정하는 것이 필요할 수도 있습니다. [그리드 예제]({{ site.baseurl }}/docs/{{ site.docs_version }}/examples/grid/) 에서 실제로 확인해 보세요.
 
 <div class="bd-example-row">
 {% capture example %}
@@ -614,9 +616,9 @@ In addition to column clearing at responsive breakpoints, you may need to reset 
 {% include example.html content=example %}
 </div>
 
-#### Margin utilities
+#### 여백 유틸리티
 
-With the move to flexbox in v4, you can use margin utilities like `.mr-auto` to force sibling columns away from one another.
+v4 의 flexbox 로 옮겨 가면서, `.mr-auto` 와 같은 여백 유틸리티를 사용하면 형제 열들을 서로 멀리 떨어뜨릴 수 있습니다.
 
 <div class="bd-example-row">
 {% capture example %}
@@ -636,9 +638,9 @@ With the move to flexbox in v4, you can use margin utilities like `.mr-auto` to 
 {% include example.html content=example %}
 </div>
 
-## Nesting
+## 중첩
 
-To nest your content with the default grid, add a new `.row` and set of `.col-sm-*` columns within an existing `.col-sm-*` column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 available columns).
+콘텐츠를 기본 그리드로 중첩하려면, `.col-sm-*` 열에 새로운 `.row` 와 `.col-sm-*` 열들을 추가하세요. 중첩된 행들은 최대 12 개 이하의 열 세트를 포함해야 합니다 (사용가능한 12 개의 열을 모두 사용할 필요는 없습니다).
 
 <div class="bd-example-row">
 {% capture example %}
@@ -659,28 +661,28 @@ To nest your content with the default grid, add a new `.row` and set of `.col-sm
 {% include example.html content=example %}
 </div>
 
-## Sass mixins
+## Sass 믹스인
 
-When using Bootstrap's source Sass files, you have the option of using Sass variables and mixins to create custom, semantic, and responsive page layouts. Our predefined grid classes use these same variables and mixins to provide a whole suite of ready-to-use classes for fast responsive layouts.
+부트스트랩의 Sass 소스 파일을 사용할 때 Sass 변수와 믹스인을 사용하여 맞춤화, 시맨틱, 반응형 페이지 레이아웃을 생성할 수 있습니다. 미리 정의된 그리드 클래스는 이와 같은 변수와 믹스인을 이용하여 빠른 반응형 레이아웃을 위해 바로 사용될 수 있는 클래스 모음을 제공합니다.
 
-### Variables
+### 변수
 
-Variables and maps determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.
+변수와 맵은 열의 수, 홈의 너비, 부동형 열을 시작하는 미디어 쿼리 포인트 등을 결정합니다. 우리는 아래에 나열된 맞춤 믹스인뿐만 아니라 앞서 설명한 미리 정의된 그리드 클래스를 생성하기 위해 이것들을 사용합니다.
 
 {% highlight scss %}
 $grid-columns:      12;
 $grid-gutter-width: 30px;
 
 $grid-breakpoints: (
-  // Extra small screen / phone
+  // 초소형 화면 / 휴대폰
   xs: 0,
-  // Small screen / phone
+  // 소형 화면 / 휴대폰
   sm: 576px,
-  // Medium screen / tablet
+  // 중형 화면 / 태블릿
   md: 768px,
-  // Large screen / desktop
+  // 대형 화면 / 데스크탑
   lg: 992px,
-  // Extra large screen / wide desktop
+  // 초대형 화면 / 큰 데스크탑
   xl: 1200px
 );
 
@@ -692,25 +694,25 @@ $container-max-widths: (
 );
 {% endhighlight %}
 
-### Mixins
+### 믹스인
 
-Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns.
+믹스인은 그리드 변수와 함께 사용되어 개별 그리드 열에 대해 시맨틱 CSS 를 생성합니다.
 
 {% highlight scss %}
-// Creates a wrapper for a series of columns
+// 일련의 열을 감싸는 row 를 만듭니다
 @include make-row();
 
-// Make the element grid-ready (applying everything but the width)
+// grid-ready 요소를 만듭니다 (너비를 제외한 모든 것)
 @include make-col-ready();
 @include make-col($size, $columns: $grid-columns);
 
-// Get fancy by offsetting, or changing the sort order
+// 오프셋을 사용하거나 정렬 순서를 바꾸어 멋지게 표현해보세요
 @include make-col-offset($size, $columns: $grid-columns);
 {% endhighlight %}
 
-### Example usage
+### 사용예
 
-You can modify the variables to your own custom values, or just use the mixins with their default values. Here's an example of using the default settings to create a two-column layout with a gap between.
+변수를 맞춤 값으로 수정하거나 기본값을 사용하여 믹스인을 사용할 수 있습니다. 다음은 기본 설정을 사용하여 간격이 있는 두 열 레이아웃을 만드는 예입니다.
 
 {% highlight scss %}
 .example-container {
@@ -748,29 +750,29 @@ You can modify the variables to your own custom values, or just use the mixins w
 {% capture example %}
 <div class="example-container">
   <div class="example-row">
-    <div class="example-content-main">Main content</div>
-    <div class="example-content-secondary">Secondary content</div>
+    <div class="example-content-main">메인 콘텐츠</div>
+    <div class="example-content-secondary">보조 콘텐츠</div>
   </div>
 </div>
 {% endcapture %}
 {% include example.html content=example %}
 
-## Customizing the grid
+## 그리드 맞춤화
 
-Using our built-in grid Sass variables and maps, it's possible to completely customize the predefined grid classes. Change the number of tiers, the media query dimensions, and the container widths—then recompile.
+내장된 그리드 Sass 변수와 맵을 사용하여 미리 정의 된 그리드 클래스를 완벽하게 맞춤화 할 수 있습니다. 계층 수, 미디어 쿼리 수치, 컨테이너 너비를 변경 한 다음 다시 컴파일하십시오.
 
-### Columns and gutters
+### 열과 홈
 
-The number of grid columns can be modified via Sass variables. `$grid-columns` is used to generate the widths (in percent) of each individual column while `$grid-gutter-width` allows breakpoint-specific widths that are divided evenly across `padding-left` and `padding-right` for the column gutters.
+그리드 열 수는 Sass 변수를 통해 수정될 수 있습니다. `$grid-columns` 는 각각의 개별 열의 너비 (백분율) 를 생성하는데 사용되는 반면 `$grid-gutter-width` 는 열의 홈을 위한 `padding-left` 와 `padding-right` 에 걸쳐 균등하게 나뉘는 중단점 지정 너비를 허용합니다.
 
 {% highlight scss %}
 $grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
 {% endhighlight %}
 
-### Grid tiers
+### 그리드 계층
 
-Moving beyond the columns themselves, you may also customize the number of grid tiers. If you wanted just four grid tiers, you'd update the `$grid-breakpoints` and `$container-max-widths` to something like this:
+열을 맞춤화하는 것을 넘어, 그리드 계층의 수를 맞춤화 할 수도 있습니다. 만약 4 개의 그리드 계층을 원한다면, `$grid-breakpoints` 와 `$container-max-widths` 를 다음과 같이 갱신 할 것입니다.
 
 {% highlight scss %}
 $grid-breakpoints: (
@@ -787,4 +789,4 @@ $container-max-widths: (
 );
 {% endhighlight %}
 
-When making any changes to the Sass variables or maps, you'll need to save your changes and recompile. Doing so will output a brand new set of predefined grid classes for column widths, offsets, and ordering. Responsive visibility utilities will also be updated to use the custom breakpoints. Make sure to set grid values in `px` (not `rem`, `em`, or `%`).
+Sass 변수나 맵을 변경할 때, 변경사항을 저장하고 다시 컴파일 해야합니다. 이렇게 하면 열 너비, 오프셋, 순서정하기를 위한 미리 정의된 그리드 클래스 묶음이 새롭게 산출됩니다. 또한 반응형 가시성 유틸리티는 맞춤 중단점을 사용하도록 갱신될 것입니다. 그리드 값들은 `px` 로 설정해야함을 명심하세요. (`rem`, `em`, `%` 아님)

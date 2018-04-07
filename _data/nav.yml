@@ -1,85 +1,156 @@
-- title: Getting started
+- title: 시작하기
+  slug: Getting started
   pages:
-    - title: Introduction
-    - title: Download
-    - title: Contents
-    - title: Browsers & devices
-    - title: JavaScript
-    - title: Theming
-    - title: Build tools
+    - title: 소개
+      slug: Introduction
+    - title: 다운로드
+      slug: Download
+    - title: 내용
+      slug: Contents
+    - title: 브라우저와 기기
+      slug: Browsers & devices
+    - title: 자바스크립트
+      slug: JavaScript
+    - title: 테마
+      slug: Theming
+    - title: 빌드 도구
+      slug: Build tools
     # - title: Best practices # TODO: Write this content
     - title: Webpack
-    - title: Accessibility
+      slug: Webpack
+    - title: 접근성
+      slug: Accessibility
 
-- title: Layout
+- title: 레이아웃
+  slug: Layout
   pages:
-    - title: Overview
-    - title: Grid
-    - title: Media object
-    - title: Utilities for layout
+    - title: 개요
+      slug: Overview
+    - title: 그리드
+      slug: Grid
+    - title: 미디어 개체
+      slug: Media object
+    - title: 레이아웃 유틸리티
+      slug: Utilities for layout
 
-- title: Content
+- title: 내용
+  slug: Content
   pages:
     - title: Reboot
-    - title: Typography
-    - title: Code
-    - title: Images
-    - title: Tables
+      slug: Reboot
+    - title: 타이포그라피
+      slug: Typography
+    - title: 코드
+      slug: Code
+    - title: 이미지
+      slug: Images
+    - title: 테이블
+      slug: Tables
     - title: Figures
+      slug: Figures
 
-- title: Components
+- title: 컴포넌트
+  slug: Components
   pages:
-    - title: Alerts
-    - title: Badge
-    - title: Breadcrumb
-    - title: Buttons
-    - title: Button group
-    - title: Card
-    - title: Carousel
-    - title: Collapse
-    - title: Dropdowns
-    - title: Forms
-    - title: Input group
-    - title: Jumbotron
-    - title: List group
-    - title: Modal
-    - title: Navs
-    - title: Navbar
-    - title: Pagination
-    - title: Popovers
-    - title: Progress
-    - title: Scrollspy
-    - title: Tooltips
+    - title: 경고
+      slug: Alerts
+    - title: 배지
+      slug: Badge
+    - title: 경로
+      slug: Breadcrumb
+    - title: 버튼
+      slug: Buttons
+    - title: 버튼 그룹
+      slug: Button group
+    - title: 카드
+      slug: Card
+    - title: 회전식
+      slug: Carousel
+    - title: 접기
+      slug: Collapse
+    - title: 드롭다운
+      slug: Dropdowns
+    - title: 폼
+      slug: Forms
+    - title: 입력 그룹
+      slug: Input group
+    - title: 점보트론
+      slug: Jumbotron
+    - title: 목록 그룹
+      slug: List group
+    - title: 모달
+      slug: Modal
+    - title: 네비게이션
+      slug: Navs
+    - title: 네비게이션바
+      slug: Navbar
+    - title: 페이지네이션
+      slug: Pagination
+    - title: 팝오버
+      slug: Popovers
+    - title: 진행
+      slug: Progress
+    - title: 스크롤감시
+      slug: Scrollspy
+    - title: 말풍선
+      slug: Tooltips
 
-- title: Utilities
+- title: 유틸리티
+  slug: Utilities
   pages:
-    - title: Borders
+    - title: 경계
+      slug: Borders
     - title: Clearfix
-    - title: Close icon
-    - title: Colors
+      slug: Clearfix
+    - title: 닫기 아이콘
+      slug: Close icon
+    - title: 색
+      slug: Colors
     - title: Display
+      slug: Display
     - title: Embed
+      slug: Embed
     - title: Flex
+      slug: Flex
     - title: Float
-    - title: Image replacement
+      slug: Float
+    - title: 이미지 교체
+      slug: Image replacement
     - title: Position
-    - title: Screenreaders
-    - title: Sizing
-    - title: Spacing
-    - title: Text
-    - title: Vertical align
+      slug: Position
+    - title: 스크린리더
+      slug: Screenreaders
+    - title: 크기 조절
+      slug: Sizing
+    - title: 공간 조절
+      slug: Spacing
+    - title: 텍스트
+      slug: Text
+    - title: 수직 정렬
+      slug: Vertical align
     - title: Visibility
+      slug: Visibility
 
-- title: Extend
+- title: 확장
+  slug: Extend
   pages:
-    - title: Approach
-    - title: Icons
+    - title: 심화
+      slug: Approach
+    - title: 아이콘
+      slug: Icons
 
-- title: Migration
+- title: 마이그레이션
+  slug: Migration
 
-- title: About
+
+- title: 소개
+  slug: About
   pages:
-    - title: Overview
-    - title: Brand
-    - title: License
-    - title: Translations
+    - title: 개요
+      slug: Overview
+    - title: 브랜드
+      slug: Brand
+    - title: 라이센스
+      slug: License
+    - title: 번역
+      slug: Translations
