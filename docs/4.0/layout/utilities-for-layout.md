@@ -1,25 +1,26 @@
 ---
 layout: docs
-title: Utilities for layout
-description: For faster mobile-friendly and responsive development, Bootstrap includes dozens of utility classes for showing, hiding, aligning, and spacing content.
+title: 레이아웃 유틸리티
+description: 모바일 친화적이고 반응형 개발을 빠르게 하기 위해, 부트스트랩은 콘텐츠의 보이기, 숨기기, 정렬하기, 간격조절을 위한 수십 가지 유틸리티 클래스들을 포함하고 있습니다.
 group: layout
 toc: true
 ---
 
-## Changing `display`
+## `display` 변경
 
-Use our [display utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/display/) for responsively toggling common values of the `display` property. Mix it with our grid system, content, or components to show or hide them across specific viewports.
+`display` 속성의 일반값을 적절하게 변경하기 위해 [display 유틸리티]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/display/) 를 사용하세요.
+그리드 시스템, 콘텐츠, 컴포넌트와 섞어 특정한 뷰포트에서 그것들을 표시하거나 숨깁니다.
 
-## Flexbox options
+## Flexbox 옵션
 
-Bootstrap 4 is built with flexbox, but not every element's `display` has been changed to `display: flex` as this would add many unnecessary overrides and unexpectedly change key browser behaviors. Most of [our components]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/alerts/) are built with flexbox enabled.
+부트스트랩 4 는 flexbox 로 만들어졌지만, 모든 요소의 `display` 가 `display: flex` 로 변경된 것은 아니기 떄문에 불필요한 오버라이드가 추가되고 예기치 않게 주요 브라우저 동작이 변경될 수 있습니다. 대부분의 [컴포넌트]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/alerts/) 는 flexbox 를 사용하여 만들어집니다. 
 
-Should you need to add `display: flex` to an element, do so with `.d-flex` or one of the responsive variants (e.g., `.d-sm-flex`). You'll need this class or `display` value to allow the use of our extra [flexbox utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/flex/) for sizing, alignment, spacing, and more.
+요소에 `display: flex` 를 추가해야 한다면, `.d-flex` 또는 반응형 변형 (예: `.d-sm-flex`) 중 하나를 사용하세요. 크기조정, 정렬, 간격조정 등을 위해서 이 클래스 또는 `display` 값을 변경하기 위한 [flexbox 유틸리티]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/flex/) 가 필요할 것입니다.
 
-## Margin and padding
+## 여백과 패딩
 
-Use the `margin` and `padding` [spacing utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/) to control how elements and components are spaced and sized. Bootstrap 4 includes a five-level scale for spacing utilities, based on a `1rem` value default `$spacer` variable. Choose values for all viewports (e.g., `.mr-3` for `margin-right: 1rem`), or pick responsive variants to target specific viewports (e.g., `.mr-md-3` for `margin-right: 1rem` starting at the `md` breakpoint).
+요소와 컴포넌트들이 간격과 크기를 조정할 방법을 제어하기 위해 `margin` 과 `padding` [spacing 유틸리티]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/) 를 사용하세요. 부트스트랩 4 는 `$spacer` 변수 기본값 `1rem` 를 기반으로 5 단계 spacing 유틸리티가 포함되어 있습니다. 모든 뷰포트 (예: `margin-right: 1rem` 의 경우 `.mr-3`), 혹은 특정한 뷰포트 (예: `md` 중단점부터 `margin-right: 1rem` 의 경우 `.mr-md-3`) 를 대상으로 하는 반응형을 선택하세요.
 
-## Toggle `visibility`
+## `visibility` 전환
 
-When toggling `display` isn't needed, you can toggle the `visibility` of an element with our [visibility utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/visibility/). Invisible elements will still affect the layout of the page, but are visually hidden from visitors.
+`display` 를 전환할 필요가 없는 경우, [visibility 유틸리티]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/visibility/) 로 요소의 `visibility` 를 전환할 수 있습니다. 보이지 않는 요소는 페이지의 레이아웃에 영향을 미치지만, 방문자에게 시각적으로 숨겨집니다.

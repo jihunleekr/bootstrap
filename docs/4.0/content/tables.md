@@ -1,16 +1,16 @@
 ---
 layout: docs
-title: Tables
-description: Documentation and examples for opt-in styling of tables (given their prevalent use in JavaScript plugins) with Bootstrap.
+title: 테이블
+description: 부트스트랩의 Opt-in 스타일 테이블 (자바스크립트 플러그인에서 많이 사용됨) 에 대한 설명서와 예제.
 group: content
 toc: true
 ---
 
-## Examples
+## 예제
 
-Due to the widespread use of tables across third-party widgets like calendars and date pickers, we've designed our tables to be **opt-in**. Just add the base class `.table` to any `<table>`, then extend with custom styles or our various included modifier classes.
+달력이나 날짜 선택기같은 서드파티 위젯에서 테이블이 광범위하게 사용되기 때문에, 테이블을 **opt-in** 하게 설계했습니다. `<table>` 에 기본 클래스 `.table` 을 추가하고, 맞춤 스타일이나 내장된 다양한 수식 클래스로 확장하면 됩니다.  
 
-Using the most basic table markup, here's how `.table`-based tables look in Bootstrap. **All table styles are inherited in Bootstrap 4**, meaning any nested tables will be styled in the same manner as the parent.
+가장 기본적인 테이블 마크업을 사용하여, 아래에 부트스트랩에서 `.table` 기반의 테이블의 모습이 어떤지 보여줍니다. **부트스트랩 4 에서 모든 테이블 스타일은 상속됩니다.** 즉, 중첩된 테이블은 부모와 같은 방식으로 스타일이 지정됩니다.   
 
 {% capture example %}
 <table class="table">
@@ -46,7 +46,7 @@ Using the most basic table markup, here's how `.table`-based tables look in Boot
 {% endcapture %}
 {% include example.html content=example %}
 
-You can also invert the colors—with light text on dark backgrounds—with `.table-dark`.
+또한 `.table-dark` 로 어두운 배경에 밝은 텍스트로 색상을 반전할 수도 있습니다.
 
 {% capture example %}
 <table class="table table-dark">
@@ -82,9 +82,9 @@ You can also invert the colors—with light text on dark backgrounds—with `.ta
 {% endcapture %}
 {% include example.html content=example %}
 
-## Table head options
+## 테이블 헤드 옵션
 
-Similar to tables and dark tables, use the modifier classes `.thead-light` or `.thead-dark` to make `<thead>`s appear light or dark gray.
+테이블을 어둡게하는 것과 비슷하게, 수식 클래스 `.thead-light` 또는 `.thead-dark` 를 사용하여 `<thead>` 를 밝게 또는 어둡게 만드세요.
 
 {% capture example %}
 <table class="table">
@@ -151,9 +151,9 @@ Similar to tables and dark tables, use the modifier classes `.thead-light` or `.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Striped rows
+## 줄무늬 행
 
-Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`.
+`.table-striped` 를 사용하여 `<tbody>` 내의 모든 행에 얼룩말 같은 줄무늬를 추가하세요.
 
 {% capture example %}
 <table class="table table-striped">
@@ -223,9 +223,9 @@ Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`
 {% endcapture %}
 {% include example.html content=example %}
 
-## Bordered table
+## 테두리있는 테이블
 
-Add `.table-bordered` for borders on all sides of the table and cells.
+테이블과 셀의 모든 면에 테두리를 적용하려면 `.table-bordered` 를 추가하세요.
 
 {% capture example %}
 <table class="table table-bordered">
@@ -293,9 +293,9 @@ Add `.table-bordered` for borders on all sides of the table and cells.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Borderless table
+## 테두리없는 테이블
 
-Add `.table-borderless` for a table without borders.
+테두리 없는 테이블을 위해 `.table-borderless` 를 추가하세요.
 
 {% capture example %}
 <table class="table table-borderless">
@@ -330,7 +330,7 @@ Add `.table-borderless` for a table without borders.
 {% endcapture %}
 {% include example.html content=example %}
 
-`.table-borderless` can also be used on dark tables.
+`.table-borderless` 는 어두운 테이블과 사용될 수도 있습니다.
 
 {% capture example %}
 <table class="table table-borderless table-dark">
@@ -365,9 +365,9 @@ Add `.table-borderless` for a table without borders.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Hoverable rows
+## 커서를 올리면 반응하는 행
 
-Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
+`.table-hover` 를 추가하여 `<tbody>` 내의 테이블 행들이 커서를 올리면 반응하도록 합니다.
 
 {% capture example %}
 <table class="table table-hover">
@@ -435,9 +435,9 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Small table
+## 작은 테이블
 
-Add `.table-sm` to make tables more compact by cutting cell padding in half.
+`.table-sm` 를 추가하여 셀 패팅을 반으로 줄여 테이블을 촘촘하게 만드세요.
 
 {% capture example %}
 <table class="table table-sm">
@@ -505,9 +505,9 @@ Add `.table-sm` to make tables more compact by cutting cell padding in half.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Contextual classes
+## 상황별 클래스
 
-Use contextual classes to color table rows or individual cells.
+상황별 클래스를 사용하여 행이나 셀에 색상을 지정합니다.
 
 <div class="bd-example">
   <table class="table">
@@ -541,12 +541,12 @@ Use contextual classes to color table rows or individual cells.
 </div>
 
 {% highlight html %}
-<!-- On rows -->
+<!-- 행에 -->
 <tr class="table-active">...</tr>
 {% for color in site.data.theme-colors %}
 <tr class="table-{{ color.name }}">...</tr>{% endfor %}
 
-<!-- On cells (`td` or `th`) -->
+<!-- 셀에 (`td` 또는 `th`) -->
 <tr>
   <td class="table-active">...</td>
   {% for color in site.data.theme-colors %}
@@ -554,7 +554,7 @@ Use contextual classes to color table rows or individual cells.
 </tr>
 {% endhighlight %}
 
-Regular table background variants are not available with the dark table, however, you may use [text or background utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/) to achieve similar styles.
+어두운 테이블에서는 테이블 배경 변형이 불가능하지만, [텍스트 및 배경 유틸리티]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/) 를 사용하여 비슷한 스타일을 얻을 수 있습니다.
 
 <div class="bd-example">
   <table class="table table-dark">
@@ -635,13 +635,13 @@ Regular table background variants are not available with the dark table, however
 
 {% include callout-warning-color-assistive-technologies.md %}
 
-Create responsive tables by wrapping any `.table` with `.table-responsive{-sm|-md|-lg|-xl}`, making the table scroll horizontally at each `max-width` breakpoint of up to (but not including) 576px, 768px, 992px, and 1120px, respectively.
+`.table` 에 `.table-responsive{-sm|-md|-lg|-xl}` 를 감싸서 반응형 테이블을 만들어, 각각 576px, 768px, 992px, 1120px 등 `max-width` 중단점에서 가로로 테이블 스크롤을 생성합니다. 
 
 {% include callout-info-mediaqueries-breakpoints.md %}
 
-## Captions
+## 캡션
 
-A `<caption>` functions like a heading for a table. It helps users with screen readers to find a table and understand what it's about and decide if they want to read it.
+`<caption>` 은 테이블의 제목과 같은 기능을 합니다. 그것은 스크린 리더 사용자들이 테이블을 찾고 그것을 읽을지 말지 결정하는 것을 도와줍니다.
 
 {% capture example %}
 <table class="table">
@@ -678,20 +678,20 @@ A `<caption>` functions like a heading for a table. It helps users with screen r
 {% endcapture %}
 {% include example.html content=example %}
 
-## Responsive tables
+## 반응형 테이블
 
-Responsive tables allow tables to be scrolled horizontally with ease. Make any table responsive across all viewports by wrapping a `.table` with `.table-responsive`. Or, pick a maximum breakpoint with which to have a responsive table up to by using `.table-responsive{-sm|-md|-lg|-xl}`.
+반응형 테이블을 이용하면 테이블을 쉽게 가로로 스크롤 할 수 있습니다. 모든 뷰포트에서 테이블을 반응형으로 만드려면 `.table` 을 `.table-responsive` 으로 둘러싸면 됩니다. 또는, `.table-responsive{-sm|-md|-lg|-xl}` 을 사용하여 반응형 테이블을 가질 최대 중단점을 선택하세요. 
 
 {% capture callout %}
-##### Vertical clipping/truncation
+##### 수직 클리핑/잘림
 
-Responsive tables make use of `overflow-y: hidden`, which clips off any content that goes beyond the bottom or top edges of the table. In particular, this can clip off dropdown menus and other third-party widgets.
+반응형 테이블은 테이블의 상하단 경계를 넘는 내용을 잘라내는데 `overflow-y: hidden` 을 사용합니다. 특히, 이것은 드롭다운 메뉴와 서드파티 위젯을 잘라낼수 있습니다.
 {% endcapture %}
 {% include callout.html content=callout type="warning" %}
 
-### Always responsive
+### 항상 반응형
 
-Across every breakpoint, use `.table-responsive` for horizontally scrolling tables.
+모든 중단점에서 가로로 스크롤할 수 있는 테이블을 위해 `.table-responsive` 을 사용하세요.
 
 <div class="bd-example">
   <div class="table-responsive">
@@ -760,9 +760,9 @@ Across every breakpoint, use `.table-responsive` for horizontally scrolling tabl
 </div>
 {% endhighlight %}
 
-### Breakpoint specific
+### 중단점 지정
 
-Use `.table-responsive{-sm|-md|-lg|-xl}` as needed to create responsive tables up to a particular breakpoint. From that breakpoint and up, the table will behave normally and not scroll horizontally.
+특정한 중단점에서 반응형 테이블을 만드는 것이 필요하다면 `.table-responsive{-sm|-md|-lg|-xl}` 을 사용하세요. 중단점 이상에서부터 테이블은 평소와 같이 작동하고 수평으로 스크롤하지 않습니다. 
 
 <div class="bd-example">
 {% for bp in site.data.breakpoints %}{% unless bp.breakpoint == "xs" %}

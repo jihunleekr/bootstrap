@@ -1,14 +1,14 @@
 ---
 layout: docs
-title: Images
-description: Documentation and examples for opting images into responsive behavior (so they never become larger than their parent elements) and add lightweight styles to them—all via classes.
+title: 이미지
+description: 반응형 동작에 이미지를 맞추고 (부모요소 보다 커지지 않도록) 클래스로 이미지에 가벼운 스타일을 추가하기 위한 설명서와 예제
 group: content
 toc: true
 ---
 
-## Responsive images
+## 반응형 이미지
 
-Images in Bootstrap are made responsive with `.img-fluid`. `max-width: 100%;` and `height: auto;` are applied to the image so that it scales with the parent element.
+부트스트랩 내의 이미지는 `.img-fluid` 으로 반응형으로 만들어집니다. `max-width: 100%;` 와 `height: auto;` 는 이미지에 적용되어 부모 요소에 크기를 맞추게 됩니다.
 
 <div class="bd-example">
   <img data-src="holder.js/100px250" class="img-fluid" alt="Generic responsive image">
@@ -19,15 +19,15 @@ Images in Bootstrap are made responsive with `.img-fluid`. `max-width: 100%;` an
 {% endhighlight %}
 
 {% capture callout %}
-##### SVG images and IE 10
+##### SVG 이미지와 IE 10
 
-In Internet Explorer 10, SVG images with `.img-fluid` are disproportionately sized. To fix this, add `width: 100% \9;` where necessary. This fix improperly sizes other image formats, so Bootstrap doesn't apply it automatically.
+인터넷 익스플로러 10 에서 `.img-fluid` 가 들어간 SVG 이미지는 불균형하게 크기가 지정됩니다. 이걸 고치려면 필요한 곳에 `width: 100% \9;` 을 추가하세요. 이 코드는 다른 이미지 포멧의 크기를 잘못 지정하므로 부트스트랩이 자동으로 적용하지 않습니다.
 {% endcapture %}
 {% include callout.html content=callout type="warning" %}
 
-## Image thumbnails
+## 이미지 썸네일
 
-In addition to our [border-radius utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/borders/), you can use `.img-thumbnail` to give an image a rounded 1px border appearance.
+[둥근 테두리 유틸리티]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/borders/) 뿐만 아니라, `.img-thumbnail` 를 사용하여 이미지에 둥근 1px 테두리 모양을 부여할 수 있습니다.
 
 <div class="bd-example bd-example-images">
   <img data-src="holder.js/200x200" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
@@ -37,9 +37,9 @@ In addition to our [border-radius utilities]({{ site.baseurl }}/docs/{{ site.doc
 <img src="..." alt="..." class="img-thumbnail">
 {% endhighlight %}
 
-## Aligning images
+## 이미지 정렬
 
-Align images with the [helper float classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/float) or [text alignment classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/#text-alignment). `block`-level images can be centered using [the `.mx-auto` margin utility class]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/#horizontal-centering).
+이미지를 [float 클래스]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/float) 또는 [텍스트 정렬 클래스]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/#text-alignment) 로 정렬하세요. `block` 류의 이미지는 [`.mx-auto` 여백 유틸리티 클래스]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/#horizontal-centering) 을 사용하여 중앙에 배치할 수 있습니다.  
 
 <div class="bd-example bd-example-images">
   <img data-src="holder.js/200x200" class="rounded float-left" alt="A generic square placeholder image with rounded corners">
@@ -74,7 +74,7 @@ Align images with the [helper float classes]({{ site.baseurl }}/docs/{{ site.doc
 
 ## Picture
 
-If you are using the `<picture>` element to specify multiple `<source>` elements for a specific `<img>`, make sure to add the `.img-*` classes to the `<img>` and not to the `<picture>` tag.
+특정 `<img>` 에 대해 여러 `<source>` 요소를 지정하기 위해 `<picture>` 를 사용한다면, `.img-*` 클래스를 `<picture>` 가 아닌 `<img>` 에 추가해야함을 명심하세요. 
 
 {% highlight html %}
 ​<picture>

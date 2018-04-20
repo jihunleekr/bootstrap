@@ -1,15 +1,15 @@
 ---
 layout: docs
-title: Buttons
-description: Use Bootstrap's custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+title: 버튼
+description: 폼, 대화상자 등에서 작업을 위해 다양한 크기, 상태 등을 지원하는 부트스트랩의 맞춤 버튼을 사용해보세요.
 group: components
 redirect_from: "/docs/4.0/components/"
 toc: true
 ---
 
-## Examples
+## 예제
 
-Bootstrap includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.
+부트스트랩은 몇가지 미리 정의된 버튼 스타일을 포함합니다. 각 스타일은 의미 체계적 목적을 제공하며 더 많은 제어를 위해 몇가지 추가 기능이 있습니다.
 
 {% capture example %}
 {% for color in site.data.theme-colors %}
@@ -21,11 +21,11 @@ Bootstrap includes several predefined button styles, each serving its own semant
 
 {% include callout-warning-color-assistive-technologies.md %}
 
-## Button tags
+## 버튼 태그
 
-The `.btn` classes are designed to be used with the `<button>` element. However, you can also use these classes on `<a>` or `<input>` elements (though some browsers may apply a slightly different rendering).
+`.btn` 클래스는 `<button>` 요소에 사용되도록 설계되었습니다. 하지만, `<a>` 나 `<input>` 요소에도 사용할 수 있습니다 (일부 브라우저는 약간 다른 렌더링을 적용할 수도 있습니다).
 
-When using button classes on `<a>` elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a `role="button"` to appropriately convey their purpose to assistive technologies such as screen readers.
+현재 페이지에서 새로운 페이지나 섹션으로 연결되는 것이 아니라 페이지 내에서 기능 (접히는 콘텐츠같은) 에 사용되는 `<a>` 요소에 버튼 클래스를 사용할때는, 스크린 리더같은 보조 기술에 목적을 적절하게 전달하기 위해 `role="button"` 를 제공해야 합니다.
 
 {% capture example %}
 <a class="btn btn-primary" href="#" role="button">Link</a>
@@ -36,9 +36,9 @@ When using button classes on `<a>` elements that are used to trigger in-page fun
 {% endcapture %}
 {% include example.html content=example %}
 
-## Outline buttons
+## 외곽선 버튼
 
-In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the `.btn-outline-*` ones to remove all background images and colors on any button.
+무거운 배경색이 아닌 버튼이 필요하세요? 기본 수식 클래스를 `.btn-outline-*` 로 교체하여 모든 배경 이미지와 색상을 버튼에서 제거하세요.
 
 {% capture example %}
 {% for color in site.data.theme-colors %}
@@ -46,23 +46,23 @@ In need of a button, but not the hefty background colors they bring? Replace the
 {% endcapture %}
 {% include example.html content=example %}
 
-## Sizes
+## 크기
 
-Fancy larger or smaller buttons? Add `.btn-lg` or `.btn-sm` for additional sizes.
+더 크거나 작은 버튼을 원하세요? 크기 조정을 위해 `.btn-lg` 혹은 `.btn-sm` 를 추가하세요.
 
 {% capture example %}
-<button type="button" class="btn btn-primary btn-lg">Large button</button>
-<button type="button" class="btn btn-secondary btn-lg">Large button</button>
+<button type="button" class="btn btn-primary btn-lg">큰 버튼</button>
+<button type="button" class="btn btn-secondary btn-lg">큰 버튼</button>
 {% endcapture %}
 {% include example.html content=example %}
 
 {% capture example %}
-<button type="button" class="btn btn-primary btn-sm">Small button</button>
-<button type="button" class="btn btn-secondary btn-sm">Small button</button>
+<button type="button" class="btn btn-primary btn-sm">작은 버튼</button>
+<button type="button" class="btn btn-secondary btn-sm">작은 버튼</button>
 {% endcapture %}
 {% include example.html content=example %}
 
-Create block level buttons—those that span the full width of a parent—by adding `.btn-block`.
+`.btn-block` 을 추가하여 부모 요소의 최대너비에 걸쳐 있는 블록 레벨 버튼을 만드세요.
 
 {% capture example %}
 <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
@@ -70,9 +70,9 @@ Create block level buttons—those that span the full width of a parent—by add
 {% endcapture %}
 {% include example.html content=example %}
 
-## Active state
+## 활성 상태
 
-Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. **There's no need to add a class to `<button>`s as they use a pseudo-class**. However, you can still force the same active appearance with `.active` (and include the <code>aria-pressed="true"</code> attribute) should you need to replicate the state programmatically.
+버튼은 활성화되면 눌린 것처럼 (어두운 배경, 어두운 테두리, 오목한 그림자로) 보여집니다. **가상클래스를 사용하기 때문에 `<button>` 에 클래스를 추가할 필요는 없습니다**. 하지만, 프로그래밍 방식으로 상태를 모사할 필요가 있다면 `.active` 를 사용하여 (그리고  <code>aria-pressed="true"</code> 속성을 포함하여) 같은 모습을 적용할 수 있습니다.
 
 {% capture example %}
 <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
@@ -80,9 +80,9 @@ Buttons will appear pressed (with a darker background, darker border, and inset 
 {% endcapture %}
 {% include example.html content=example %}
 
-## Disabled state
+## 비활성 상태
 
-Make buttons look inactive by adding the `disabled` boolean attribute to any `<button>` element.
+`<button>` 요소에 `disabled` 속성을 추가하여 비활성 상태로 보여지게 합니다.
 
 {% capture example %}
 <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
@@ -90,11 +90,11 @@ Make buttons look inactive by adding the `disabled` boolean attribute to any `<b
 {% endcapture %}
 {% include example.html content=example %}
 
-Disabled buttons using the `<a>` element behave a bit different:
+`<a>` 요소를 사용하는 비활성 버튼은 조금 다르게 동작합니다.
 
-- `<a>`s don't support the `disabled` attribute, so you must add the `.disabled` class to make it visually appear disabled.
-- Some future-friendly styles are included to disable all `pointer-events` on anchor buttons. In browsers which support that property, you won't see the disabled cursor at all.
-- Disabled buttons should include the `aria-disabled="true"` attribute to indicate the state of the element to assistive technologies.
+- `<a>` 는 `disabled` 속성을 지원하지 않으므로 비활성화 된 것으로 보이게 하려면 `.disabled` 클래스를 추가해야 합니다. 
+- 앵커 버튼의 모든 `pointer-events` 를 비활성화 하기 위해 일부 미래지향적인 스타일이 포함되어 있습니다. 해당 속성을 지원하는 브라우저에서는 비활성화된 커서가 전혀 표시되지 않습니다. 
+- 비활성화된 버튼은 `aria-disabled="true"` 속성을 포함해서 보조 기술에게 요소의 상태를 알려주어야 합니다.
 
 {% capture example %}
 <a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
@@ -103,19 +103,19 @@ Disabled buttons using the `<a>` element behave a bit different:
 {% include example.html content=example %}
 
 {% capture callout %}
-##### Link functionality caveat
+##### 링크 기능성 경고
 
-The `.disabled` class uses `pointer-events: none` to try to disable the link functionality of `<a>`s, but that CSS property is not yet standardized. In addition, even in browsers that do support `pointer-events: none`, keyboard navigation remains unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to activate these links. So to be safe, add a `tabindex="-1"` attribute on these links (to prevent them from receiving keyboard focus) and use custom JavaScript to disable their functionality.
+`.disabled` 클래스는 링크의 기능성을 비활성화하기 위해 `pointer-events: none` 를 사용합니다만, 이러한 CSS 속성은 아직 표준화 되지 않았습니다. 게다가, `pointer-events: none` 를 지원하는 브라우저에서도 키보드 탐색은 영향을 받지 않습니다. 이는 키보드 사용자와 보조 기술 사용자는 여전히 이 링크들을 활성화할 수 있다는 의미입니다. 따라서 안전을 위해 링크에 `tabindex="-1"` 특성을 추가하고 기능성을 비활성화 하기 위한 맞춤 자바스크립트를 사용하세요.
 {% endcapture %}
 {% include callout.html content=callout type="warning" %}
 
-## Button plugin
+## 버튼 플러그인
 
-Do more with buttons. Control button states or create groups of buttons for more components like toolbars.
+버튼으로 더 많은 작업을 수행하세요. 버튼 상태를 컨트롤 하거나 툴바 컴포넌트 같은 버튼 그룹을 만들어보세요.
 
-### Toggle states
+### 토글 상태
 
-Add `data-toggle="button"` to toggle a button's `active` state. If you're pre-toggling a button, you must manually add the `.active` class **and** `aria-pressed="true"` to the `<button>`.
+`data-toggle="button"` 를 추가하여 버튼의 `active` 상태를 토글하세요. 만약 미리 버튼을 토글하려면, `<button>` 에 `.active` 클래스 **와** `aria-pressed="true"` 를 수동으로 추가해야 합니다.
 
 {% capture example %}
 <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
@@ -124,13 +124,13 @@ Add `data-toggle="button"` to toggle a button's `active` state. If you're pre-to
 {% endcapture %}
 {% include example.html content=example %}
 
-### Checkbox and radio buttons
+### 체크박스와 라디오 버튼
 
-Bootstrap's `.button` styles can be applied to other elements, such as `<label>`s, to provide checkbox or radio style button toggling. Add `data-toggle="buttons"` to a `.btn-group` containing those modified buttons to enable their toggling behavior via JavaScript and add `.btn-group-toggle` to style the `<input>`s within your buttons. **Note that you can create single input-powered buttons or groups of them.**
+부트스트랩의 `.button` 스타일은 `<label>` 과 같은 다른 요소에 적용되어 버튼 스타일 체크박스나 라디오에 토글링을 제공합니다. 수정된 버튼들을 포함한 `.btn-group` 에 `data-toggle="buttons"` 을 추가하여 자바스크립트를 통해 토글링 동작이 활성화 되도록 하고 `.btn-group-toggle` 를 추가하여 `<input>` 들에 스타일을 적용하세요. **버튼 모습의 단일 input 이나 그룹을 만들 수 있습니다.** 
 
-The checked state for these buttons is **only updated via `click` event** on the button. If you use another method to update the input—e.g., with `<input type="reset">` or by manually applying the input's `checked` property—you'll need to toggle `.active` on the `<label>` manually.
+이 버튼들의 체크된 상태는 버튼의 **오직 `click` 이벤트를 통해서만 업데이트 됩니다.** 만약 input 을 업데이트하기 위해 `<input type="reset">` 을 사용하거나 input 의 `checked` 속성을 수동으로 적용하는 것과 같이 다른 방법을 사용하려면 `<label>` 의 `.active` 를 수동으로 토글하는 것이 필요할 것입니다.
 
-Note that pre-checked buttons require you to manually add the `.active` class to the input's `<label>`.
+미리 체크된 버튼은 input 의 `<label>` 에 `.active` 클래스를 수동으로 추가하는 것이 필요합니다.
 
 {% capture example %}
 <div class="btn-group-toggle" data-toggle="buttons">
@@ -156,9 +156,9 @@ Note that pre-checked buttons require you to manually add the `.active` class to
 {% endcapture %}
 {% include example.html content=example %}
 
-### Methods
+### 메서드
 
-| Method | Description |
+| 메서드 | 설명 |
 | --- | --- |
-| `$().button('toggle')` | Toggles push state. Gives the button the appearance that it has been activated. |
-| `$().button('dispose')` | Destroys an element's button. |
+| `$().button('toggle')` | 눌림 상태를 토글합니다. 버튼에 활성화 된 모양을 부여합니다. |
+| `$().button('dispose')` | 요소의 버튼을 소멸합니다. |

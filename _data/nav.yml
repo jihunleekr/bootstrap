@@ -52,7 +52,7 @@
 - title: 컴포넌트
   slug: Components
   pages:
-    - title: 경고
+    - title: 알림
       slug: Alerts
     - title: 배지
       slug: Badge
